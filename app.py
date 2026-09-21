@@ -1,3 +1,5 @@
+# Добавляем ошибку для проверки статуса skipped у джобы build
+import nonexistent_module
 import hashlib
 import ipaddress
 import subprocess
