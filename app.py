@@ -1,5 +1,3 @@
-# Добавляем ошибку для проверки статуса skipped у джобы build
-import nonexistent_module
 import hashlib
 import ipaddress
 import subprocess
@@ -38,8 +36,9 @@ def ping():
 
     # Исправление №3, слой 2: список аргументов вместо строки,
     # shell=False -> оболочка не участвует, инъекция невозможна.
+    # Меняем ping на /bin/ping
     result = subprocess.run(
-        ["ping", "-c", "1", host],
+        ["/bin/ping", "-c", "1", host],
         capture_output=True,
         check=False,
         timeout=5,
